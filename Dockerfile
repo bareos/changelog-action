@@ -1,4 +1,3 @@
-FROM centos:8
-RUN dnf install -y python3
+FROM python:3.9-bullseye
 ADD scripts /
 ENTRYPOINT ["/entrypoint.sh"]
