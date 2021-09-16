@@ -1,0 +1,8 @@
+name: 'Bareos Changelog'
+description: 'Add a changelog entry based on a PR title'
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - ${{ github.event.number }}
+    - "${{ github.event.pull_request.title }}"
