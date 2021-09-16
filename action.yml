@@ -1,8 +1,15 @@
 name: 'Bareos Changelog'
 description: 'Add a changelog entry based on a PR title'
+inputs:
+  pull-request:
+    description: 'Id of Pull-Request this change belongs to'
+    required: true
+  change-entry: 
+    description: 'Text to add as a new entry in the Changelog'
+    required: true
 runs:
   using: 'docker'
   image: 'Dockerfile'
   args:
-    - ${{ github.event.number }}
-    - "${{ github.event.pull_request.title }}"
+    - "${{ inputs.pull-request }}"
+    - "${{ inputs.change-entry }}"
