@@ -95,4 +95,4 @@ for ref_tok in "${ref_tokens[@]}"; do
   esac
 done
 
-mv "$tmp" CHANGELOG.md
+cat "$tmp" > CHANGELOG.md
